@@ -44,14 +44,15 @@ El backend queda como propuesta hasta cerrar sus decisiones pendientes en `docs/
 
 ## Primeros pasos
 
-Requisitos: Node.js 26 LTS y pnpm 12.
+Requisitos: Node.js 26 LTS y pnpm 12. Comprueba el requisito de macOS en [runtime.md](docs/architecture/runtime.md).
 
 ```bash
-corepack enable
-corepack prepare pnpm@12.18.0 --activate
+npm install --global pnpm@12.18.0
 pnpm install
 pnpm run verify
 ```
+
+Node.js 25 y posteriores ya no distribuyen Corepack. Por eso se instala pnpm directamente; no presupongas que `corepack enable` existe en una instalación moderna de Node.
 
 Esta primera versión contiene la estructura y la ingeniería base, no aplicaciones generadas. `apps/web` y `apps/api` son puntos de partida documentados.
 

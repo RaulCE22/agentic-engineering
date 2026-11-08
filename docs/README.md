@@ -6,6 +6,7 @@ Start here and open only the documents needed for the current task.
 |---|---|---|
 | Product | product/vision.md | Product and engineering principles |
 | Architecture | architecture/overview.md | Boundaries and system map |
+| Runtime | architecture/runtime.md | Node.js version and platform compatibility |
 | Monorepo | architecture/monorepo.md | Workspace and package boundaries |
 | Frontend | architecture/frontend.md | Adopted frontend conventions |
 | Backend | architecture/backend.md | Proposed backend architecture |
