@@ -1,29 +1,29 @@
-# Product and engineering vision
+# Visión del producto y de ingeniería
 
-## Purpose
-Create a reusable foundation for personal web applications. Projects should share engineering principles, repository layout, development workflow and quality controls.
+## Propósito
+Crear una base reutilizable para aplicaciones web personales. Los proyectos compartirán principios de ingeniería, estructura de repositorio, flujo de desarrollo y controles de calidad.
 
-## Product principles
-- Solve the product problem without maximizing framework complexity.
-- Build modular applications with explicit boundaries.
-- Keep frontend and backend independently deployable.
-- Use a monorepo to coordinate applications and shared contracts.
-- Prefer supported libraries and boring operational choices.
-- Make requirements and acceptance criteria explicit.
-- Keep model providers replaceable.
-- Make quality checks executable and repeatable.
+## Principios de producto
+- Resolver el problema del producto sin maximizar la complejidad del framework.
+- Construir aplicaciones modulares con límites explícitos.
+- Mantener frontend y backend desplegables de forma independiente.
+- Utilizar un monorepo para coordinar aplicaciones y contratos compartidos.
+- Preferir bibliotecas mantenidas y decisiones operativas sencillas.
+- Expresar los requisitos y criterios de aceptación de forma explícita.
+- Mantener intercambiables los proveedores de modelos.
+- Hacer que las comprobaciones de calidad sean ejecutables y repetibles.
 
-## Engineering principles
-- One source of truth for every rule, requirement and decision.
-- Progressive disclosure: load details only when a task needs them.
-- Skills describe procedures; scripts enforce deterministic checks.
-- Agents have bounded responsibilities and permissions.
-- Plans describe intended work; progress records actual work.
-- Automated validation is mandatory; LLM self-assessment is not proof.
+## Principios de ingeniería
+- Una única fuente de verdad para cada regla, requisito y decisión.
+- Carga progresiva: consultar los detalles solo cuando la tarea los necesite.
+- Las skills describen procedimientos; los scripts imponen comprobaciones deterministas.
+- Los agentes tienen responsabilidades y permisos delimitados.
+- Los planes describen el trabajo previsto; los registros de progreso reflejan el trabajo realizado.
+- La validación automatizada es obligatoria; la autoevaluación del LLM no constituye una prueba.
 
-## Non-goals
-- Not an application framework or alternative to the selected libraries.
-- Not a custom agent runtime.
-- Does not prescribe microservices.
-- Does not generate apps, schemas or deployment stacks before a product requires them.
-- Does not depend on a specific LLM vendor or paid subscription.
+## Fuera de alcance
+- No es un framework de aplicaciones ni un sustituto de las bibliotecas elegidas.
+- No implementa un runtime de agentes propio.
+- No prescribe una arquitectura de microservicios.
+- No genera aplicaciones, esquemas ni despliegues antes de que un producto los necesite.
+- No depende de un proveedor concreto de LLM ni de una suscripción de pago.

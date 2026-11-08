@@ -1,33 +1,35 @@
-# Feature development lifecycle
+# Ciclo de desarrollo de una funcionalidad
 
-Use the lightest workflow that still controls risk. A copy change does not need a multi-agent process; authentication, persistence and public-contract changes do.
+Utiliza el flujo más ligero que controle adecuadamente el riesgo. Un cambio de texto no necesita un proceso con varios agentes; los cambios de autenticación, persistencia y contratos públicos sí requieren más control.
 
-## 1. Discovery
-- Identify requirement ID, scope and acceptance criteria.
-- Read relevant architecture and accepted ADRs.
-- Inspect implementation, tests and contracts.
-- Map affected modules, dependencies and risks.
-- Do not edit application source during discovery.
-- Report missing behaviour as questions; do not invent it.
+## 1. Análisis previo
+- Identifica el requisito, su alcance y sus criterios de aceptación.
+- Lee la arquitectura y los ADR relevantes.
+- Inspecciona la implementación, pruebas y contratos existentes.
+- Identifica módulos afectados, dependencias y riesgos.
+- No modifiques código de aplicación durante esta fase.
+- Expón como preguntas los comportamientos que falten; no los inventes.
 
-Output: concise findings with references to source documents and files.
+Resultado: resumen conciso con referencias a documentos y archivos consultados.
 
-## 2. Planning
-Required for multi-module, schema, public-contract, authentication/security and infrastructure work. Include objective, scope/non-goals, module ownership, expected areas to change, ordered phases, acceptance-test mapping, risks, migrations, rollback and approval points.
+## 2. Planificación
+Es obligatoria para cambios entre módulos, esquemas de datos, contratos públicos, autenticación/seguridad e infraestructura.
 
-Output: plans/active/<slug>/plan.md.
+El plan debe incluir objetivo, alcance y exclusiones, módulos responsables, áreas que se modificarán, fases ordenadas, relación entre criterios de aceptación y pruebas, riesgos, migraciones, rollback y puntos de aprobación.
 
-## 3. Approval
-Human approval is required for unresolved product behaviour, accepted-architecture changes, security-sensitive changes, destructive database operations and production infrastructure changes.
+Resultado: plans/active/<slug>/plan.md.
 
-## 4. Implementation
-Work only within approved scope. Reuse module patterns, keep changes cohesive, add tests, avoid unrelated refactoring and record material discoveries in progress.md.
+## 3. Aprobación
+Se requiere aprobación humana para comportamientos de producto no resueltos, cambios de arquitectura aceptada, tareas sensibles de seguridad, operaciones destructivas de base de datos y cambios de infraestructura de producción.
 
-## 5. Verification
-Run focused checks during implementation and all applicable checks before handoff. Inspect the final diff. Report exact commands and results; mark skipped checks explicitly.
+## 4. Implementación
+Trabaja únicamente dentro del alcance aprobado. Reutiliza patrones de los módulos, mantén los cambios cohesionados, añade pruebas, evita refactorizaciones ajenas y registra los descubrimientos relevantes en progress.md.
 
-## 6. Independent review
-Review the diff against requirements, architecture, security and test evidence. Report actionable findings with severity and file references. Reviewers do not edit implementation.
+## 5. Verificación
+Ejecuta comprobaciones específicas durante la implementación y todas las aplicables antes de entregar. Inspecciona el diff final. Informa de los comandos exactos y sus resultados; indica explícitamente las comprobaciones omitidas.
 
-## 7. Handoff
-Summarize completed criteria, tests, limitations and follow-up work. Update relevant docs. Move a plan to completed only after acceptance.
+## 6. Revisión independiente
+Revisa el diff frente a requisitos, arquitectura, seguridad y evidencias de pruebas. Informa de hallazgos accionables con severidad y referencias a archivos. El revisor no modifica la implementación.
+
+## 7. Entrega
+Resume criterios completados, pruebas, limitaciones y trabajo pendiente. Actualiza la documentación pertinente. Mueve el plan a completed únicamente cuando el trabajo esté aceptado.

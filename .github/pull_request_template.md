@@ -1,24 +1,30 @@
-## Summary
-Describe the change and its motivation.
+## Resumen
 
-## Related requirements and decisions
-- Requirements:
-- ADRs:
+Describe el cambio y su motivación.
 
-## Scope
-- [ ] Change stays within the approved plan.
-- [ ] No unrelated refactoring is included.
+## Requisitos y decisiones relacionados
 
-## Verification
-| Command/check | Result |
+- Requisitos:
+- ADR:
+
+## Alcance
+
+- [ ] El cambio se mantiene dentro del plan aprobado.
+- [ ] No incluye refactorizaciones ajenas.
+
+## Verificación
+
+| Comando/comprobación | Resultado |
 |---|---|
-| | Not run |
+| | No ejecutado |
 
-## Security and operations
-- [ ] No secrets or environment files added.
-- [ ] Authorization and validation reviewed where relevant.
-- [ ] Migration and deployment impact documented where relevant.
+## Seguridad y operaciones
 
-## Documentation
-- [ ] Requirements, ADRs or architecture docs updated where needed.
-- [ ] Progress/handoff information is current.
+- [ ] No se han añadido secretos ni archivos de entorno reales.
+- [ ] Se han revisado autorización y validación cuando corresponde.
+- [ ] Se ha documentado el impacto en migraciones y despliegue cuando corresponde.
+
+## Documentación
+
+- [ ] Se han actualizado los requisitos, ADR o documentos de arquitectura necesarios.
+- [ ] El registro de progreso y la información de entrega están actualizados.

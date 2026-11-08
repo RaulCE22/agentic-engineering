@@ -1,4 +1,4 @@
-name: Validate engineering foundation
+name: Validar la base de ingeniería
 
 on:
   push:
@@ -10,19 +10,19 @@ permissions:
 
 jobs:
   validate:
-    name: Documentation and workspace checks
+    name: Comprobaciones de documentación y workspace
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Descargar el repositorio
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
 
-      - name: Install pinned pnpm
+      - name: Instalar pnpm fijado
         run: npm install --global pnpm@12.18.0
 
-      - name: Validate foundation
+      - name: Validar la base de ingeniería
         run: pnpm run verify

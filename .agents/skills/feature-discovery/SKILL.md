@@ -1,20 +1,21 @@
 ---
 name: feature-discovery
-description: Investigate a feature request, locate relevant requirements and architecture, and report scope, dependencies, risks and unanswered questions without changing source code.
+description: Investiga una solicitud funcional, localiza requisitos y arquitectura relacionados e informa del alcance, dependencias, riesgos y dudas sin modificar código fuente.
 ---
 
-# Feature discovery
+# Análisis previo de funcionalidades
 
-## Procedure
-1. Locate the requirement and acceptance criteria. If none exists, report missing product decisions; do not invent them.
-2. Read relevant architecture pages and accepted ADRs.
-3. Inspect related implementation, tests, package scripts and contracts.
-4. Map affected modules and dependency direction.
-5. Identify reusable patterns, security/data/compatibility risks and unknowns.
-6. Distinguish observed facts from assumptions and blockers from non-blocking questions.
+## Procedimiento
+1. Localiza el requisito y sus criterios de aceptación. Si no existe, identifica las decisiones de producto que faltan; no las inventes.
+2. Lee las páginas de arquitectura y los ADR aceptados que sean relevantes.
+3. Inspecciona la implementación, las pruebas, los scripts del paquete y los contratos relacionados.
+4. Identifica los módulos afectados y la dirección de sus dependencias.
+5. Detecta patrones existentes que convenga reutilizar.
+6. Identifica riesgos de seguridad, datos, compatibilidad y aspectos desconocidos.
+7. Distingue los hechos observados de las suposiciones, y los bloqueos de las preguntas no bloqueantes.
 
-## Output
-Requirement references, current behaviour, files/modules inspected, scope, risks, open questions and recommended next action.
+## Resultado
+Incluye referencias al requisito y a los documentos fuente, comportamiento actual, archivos/módulos inspeccionados, alcance, riesgos, preguntas pendientes y siguiente acción recomendada.
 
-## Constraints
-Read-only. Do not edit source or docs. Do not scan the whole repository indiscriminately. Prefer a local change over a rewrite.
+## Restricciones
+Solo lectura: no modifiques código fuente ni documentación. No inspecciones indiscriminadamente todo el repositorio. Prioriza un cambio localizado frente a una reescritura.

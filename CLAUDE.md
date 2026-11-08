@@ -1,6 +1,6 @@
 @AGENTS.md
 
-## Claude Code adapter
-Use shared skills in `.agents/skills/`. The `.claude/skills` path points to that shared directory.
+## Adaptador de Claude Code
+Utiliza las skills compartidas de `.agents/skills/`. La ruta `.claude/skills` apunta a ese directorio.
 
-Add Claude-specific agents, hooks or permissions only when a concrete workflow requires them. Do not duplicate shared project rules here.
+Añade agentes, hooks o permisos específicos de Claude únicamente cuando un flujo de trabajo concreto lo requiera. No dupliques aquí las reglas compartidas del proyecto.

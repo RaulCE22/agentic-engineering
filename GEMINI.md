@@ -1,4 +1,4 @@
 @./AGENTS.md
 
-## Gemini CLI adapter
-Use shared skills in `.agents/skills/` and follow the same repository workflow. Do not create a second source of truth for project instructions.
+## Adaptador de Gemini CLI
+Utiliza las skills compartidas de `.agents/skills/` y sigue el mismo flujo de trabajo del repositorio. No crees una segunda fuente de verdad para las instrucciones del proyecto.

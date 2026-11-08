@@ -1,10 +1,10 @@
 # Dockge
 
-Dockge manages Docker Compose stacks on the Hetzner host.
+Dockge gestiona los stacks Docker Compose en el servidor Hetzner.
 
-- Keep stack definitions versioned in the repository or a controlled deployment checkout.
-- Restrict Dockge to private authenticated access.
-- Use one stack per application or clearly bounded deployment unit.
-- Keep environment values in protected server-side files or secret management.
-- Document stack name, networks, volumes, image tags, health checks and rollback.
-- Do not make Dockge the only copy of a Compose definition.
+- Mantén las definiciones de los stacks versionadas en el repositorio o en un checkout de despliegue controlado.
+- Restringe Dockge a acceso privado y autenticado.
+- Utiliza un stack por aplicación o por unidad de despliegue claramente delimitada.
+- Mantén los valores de entorno en archivos protegidos del servidor o en un gestor de secretos.
+- Documenta nombre del stack, redes, volúmenes, etiquetas de imagen, health checks y rollback.
+- No conviertas Dockge en la única copia de una definición Compose.

@@ -1,18 +1,22 @@
-# Pending architecture decisions
+# Decisiones de arquitectura pendientes
 
-These questions are intentionally open. Agents must not guess or silently establish permanent conventions.
+Estas cuestiones están abiertas deliberadamente. Los agentes no deben adivinarlas ni establecer convenciones permanentes por su cuenta.
 
-| ID | Topic | Current position | Needed before |
+| ID | Tema | Posición actual | Resolver antes de |
 |---|---|---|---|
-| BE-01 | PostgreSQL driver | Compare node-postgres (pg) and postgres.js with Drizzle + Better Auth | First API scaffold |
-| BE-02 | API contracts | REST + OpenAPI vs Hono RPC | First shared frontend/API feature |
-| BE-03 | Error and pagination format | Define a standard envelope | First API endpoint |
-| BE-04 | Shared contracts | packages/contracts is a candidate | First shared contract |
-| BE-05 | Better Auth | Confirm cookie domain, trusted origins, CORS and session policy | Authentication implementation |
-| BE-06 | Email provider | No provider selected | Verification/reset flow |
-| DB-01 | Database operations | Define backup, restore, retention and migration deployment | Production data |
-| INF-01 | TLS topology | Confirm Traefik ACME vs Cloudflare origin certificate and proxy mode | First public deployment |
-| INF-02 | Secret handling | Select server-side secret storage and rotation process | First production deployment |
-| QA-01 | E2E framework | Vitest accepted for unit/component; E2E not selected | First critical journey |
+| BE-01 | Driver PostgreSQL | Comparar node-postgres (pg) y postgres.js con Drizzle + Better Auth | Primera base de API |
+| BE-02 | Contratos API | REST + OpenAPI frente a Hono RPC | Primera funcionalidad compartida frontend/API |
+| BE-03 | Errores y paginación | Definir un formato de respuesta estándar | Primer endpoint API |
+| BE-04 | Contratos compartidos | packages/contracts es una posibilidad | Primer contrato compartido |
+| BE-05 | Better Auth | Confirmar dominio de cookies, trusted origins, CORS y sesiones | Implementación de autenticación |
+| BE-06 | Proveedor de correo | Todavía no seleccionado | Verificación y recuperación |
+| DB-01 | Operaciones de base de datos | Definir backup, restauración, retención y migraciones | Datos de producción |
+| INF-01 | Topología TLS | Confirmar Traefik ACME o certificado de origen Cloudflare y modo proxy | Primer despliegue público |
+| INF-02 | Gestión de secretos | Elegir almacenamiento y rotación en el servidor | Primer despliegue productivo |
+| QA-01 | Herramienta E2E | Vitest está adoptado para unitarias/componentes; E2E pendiente | Primer recorrido crítico |
 
-To resolve an item: research supported options, build a small proof of concept when useful, record the choice in an ADR, update this register and relevant architecture docs.
+Para resolver una cuestión:
+1. Investiga las opciones soportadas.
+2. Construye una prueba de concepto pequeña si existe riesgo de integración.
+3. Registra la elección en un ADR.
+4. Actualiza este registro y los documentos de arquitectura relacionados.

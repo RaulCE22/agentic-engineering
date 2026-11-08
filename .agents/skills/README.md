@@ -1,9 +1,14 @@
-# Shared Agent Skills
+# Skills compartidas
 
-Skills follow the Agent Skills format: one directory per skill with a SKILL.md containing YAML frontmatter (name and description) and concise procedural instructions.
+Las skills siguen el formato Agent Skills: un directorio por skill con un archivo SKILL.md que contiene metadatos YAML (name y description) e instrucciones procedimentales breves.
 
-Keep descriptions discoverable and specific. Load references only when needed. Use scripts for deterministic checks instead of natural-language instructions when possible.
+Mantén las descripciones concretas y fáciles de descubrir. Carga las referencias detalladas únicamente cuando sean necesarias. Utiliza scripts para las comprobaciones deterministas en lugar de instrucciones en lenguaje natural cuando sea posible.
 
-Initial skills: feature-discovery, feature-planning, feature-implementation, test-and-verify and code-review.
+Skills iniciales:
+- feature-discovery
+- feature-planning
+- feature-implementation
+- test-and-verify
+- code-review
 
-Shared source of truth: .agents/skills/. Claude Code accesses the same directory through .claude/skills.
+Fuente compartida: .agents/skills/. Claude Code accede al mismo directorio mediante .claude/skills.

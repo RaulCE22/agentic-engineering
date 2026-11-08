@@ -1,44 +1,44 @@
-# Runtime and toolchain
+# Runtime y herramientas
 
-## Node.js baseline
+## Versión de Node.js
 
-- Project runtime: Node.js 26 LTS.
-- Initial pin: 26.13.0.
-- Node 26 entered Active LTS on 2026-10-28. Its scheduled end-of-life is 2029-04-30; release schedules can change.
-- Node.js is pinned through .nvmrc, .node-version and package.json engines.
+- Runtime del proyecto: Node.js 26 LTS.
+- Versión inicial fijada: 26.13.0.
+- Node 26 entró en Active LTS el 28-10-2026. Su fin de vida programado es el 30-04-2029; el calendario puede cambiar.
+- Node.js se fija mediante .nvmrc, .node-version y engines en package.json.
 
-Official references:
+Referencias oficiales:
 - https://nodejs.org/en/about/previous-releases
 - https://github.com/nodejs/Release
 - https://github.com/nodejs/node/blob/main/BUILDING.md
 
-## macOS compatibility
+## Compatibilidad con macOS
 
-Official Node.js 24 and 26 macOS binaries require macOS 13.5 or newer. A Mac running macOS 12 Monterey cannot run these official binaries.
+Los binarios oficiales de Node.js 24 y 26 para macOS requieren macOS 13.5 o posterior. Un Mac con macOS 12 Monterey no puede ejecutar estos binarios oficiales.
 
-Node.js 22 supports older macOS versions, including macOS 11, but its scheduled end-of-life is 2027-04-30. It is not selected as this repository's standard runtime because it is too close to end-of-life for a new reusable foundation.
+Node.js 22 es compatible con versiones anteriores de macOS, incluida macOS 11, pero su fin de vida está programado para el 30-04-2027. No se selecciona como runtime estándar de esta nueva base reutilizable porque está demasiado cerca del fin de soporte.
 
-Preferred solution: update the development Mac to macOS 13.5 or later, ideally a currently supported macOS release. If that is not possible, use a supported remote Linux development environment rather than quietly changing this repository's Node baseline.
+Solución preferida: actualizar el Mac de desarrollo a macOS 13.5 o posterior, idealmente a una versión de macOS que siga teniendo soporte. Si no es posible, utiliza un entorno de desarrollo remoto Linux soportado en lugar de cambiar silenciosamente la versión estándar de Node del repositorio.
 
-The Node 26 Linux runtime used in CI and deployment is unaffected by the macOS binary requirement.
+El runtime Node 26 sobre Linux utilizado en CI y despliegue no está afectado por el requisito de los binarios de macOS.
 
 ## pnpm
 
-- Initial package manager pin: pnpm 12.18.0.
-- package.json declares packageManager and the supported pnpm major.
-- Node.js 25+ does not bundle Corepack. Install the pinned pnpm directly with:
+- Versión inicial del gestor de paquetes: pnpm 12.18.0.
+- package.json declara packageManager y la versión principal compatible de pnpm.
+- Node.js 25 y posteriores no incluyen Corepack. Instala la versión fijada de pnpm directamente:
 
 ```bash
 npm install --global pnpm@12.18.0
 ```
 
-Alternatively install a compatible standalone Corepack version separately and enable it. Do not assume Corepack is bundled with Node 26.
+También se puede instalar por separado una versión compatible de Corepack. No presupongas que Corepack viene incluido con Node 26.
 
-Official references:
+Referencias oficiales:
 - https://pnpm.io/
 - https://pnpm.io/blog/releases/12.18.0
 - https://github.com/nodejs/node/blob/main/doc/contributing/distribution.md
 
-## Updating the runtime
+## Actualización del runtime
 
-When a new Node patch is adopted, update .nvmrc, .node-version and the documented pin together. Keep package.json engines aligned with the supported major. Review native dependencies and CI before changing the major version.
+Cuando se adopte una nueva versión de Node, actualiza conjuntamente .nvmrc, .node-version y la versión documentada. Mantén package.json engines alineado con la versión principal soportada. Revisa dependencias nativas y CI antes de cambiar de versión principal.

@@ -1,20 +1,23 @@
 ---
 name: feature-planning
-description: Turn an understood requirement into a bounded implementation plan with module ownership, ordered phases, acceptance-test mapping, risks and approval points.
+description: Convierte un requisito analizado en un plan de implementación acotado, con responsabilidades por módulo, fases, pruebas de aceptación, riesgos y puntos de aprobación.
 ---
 
-# Feature planning
+# Planificación de funcionalidades
 
-## Procedure
-1. Confirm the requirement is sufficiently specified and follows accepted ADRs.
-2. Define scope and non-goals.
-3. Assign work to existing modules and respect dependency direction.
-4. List expected files/areas without claiming certainty if discovery is incomplete.
-5. Divide work into small ordered phases.
-6. Map every acceptance criterion to a verification method.
-7. Identify migrations, security implications, deployment impact and rollback.
-8. Flag decisions requiring human approval.
-9. Save plans/active/<slug>/plan.md and create/update progress.md.
+## Procedimiento
+1. Confirma que el requisito está suficientemente definido y que respeta los ADR aceptados.
+2. Define el alcance y lo que queda expresamente excluido.
+3. Asigna el trabajo a módulos existentes y respeta la dirección de dependencias.
+4. Enumera los archivos o áreas que previsiblemente cambiarán, sin fingir certeza si el análisis está incompleto.
+5. Divide el trabajo en fases pequeñas y ordenadas.
+6. Relaciona cada criterio de aceptación con un método de verificación.
+7. Identifica migraciones, implicaciones de seguridad, impacto en despliegue y estrategia de reversión.
+8. Señala las decisiones que requieren aprobación humana.
+9. Guarda plans/active/<slug>/plan.md y crea o actualiza progress.md.
 
-## Constraints
-Planning only. Do not implement source code, invent business rules or add abstractions without demonstrated need. Request approval for high-risk, public-contract, authentication/security or destructive changes.
+## Resultado
+Un plan que otro agente pueda implementar sin reinterpretar la intención del producto.
+
+## Restricciones
+Solo planificación: no implementes código fuente, no inventes reglas de negocio ni añadas abstracciones sin necesidad demostrada. Solicita aprobación para cambios de alto riesgo, contratos públicos, autenticación/seguridad u operaciones destructivas.

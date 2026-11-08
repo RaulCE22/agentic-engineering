@@ -1,46 +1,46 @@
-# Implementation plan: <title>
+# Plan de implementación: <título>
 
-- Status: Draft
-- Requirement IDs: <REQ IDs>
-- Related ADRs: <ADR IDs>
-- Risk: Low | Medium | High
-- Approval: Pending | Approved | Not required
+- Estado: Borrador
+- Requisitos: <IDs REQ>
+- ADR relacionados: <IDs ADR>
+- Riesgo: Bajo | Medio | Alto
+- Aprobación: Pendiente | Aprobado | No necesaria
 
-## Objective
-What outcome will this plan deliver?
+## Objetivo
+¿Qué resultado entregará este plan?
 
-## Scope
-### In scope
+## Alcance
+### Incluye
 - 
 
-### Out of scope
+### No incluye
 - 
 
-## Current state
-Relevant modules, contracts and tests.
+## Situación actual
+Módulos, contratos y pruebas existentes relevantes.
 
-## Proposed design
-Module ownership, dependency direction and data flow.
+## Diseño propuesto
+Responsabilidad de los módulos, dirección de dependencias y flujo de datos.
 
-## Files and areas expected to change
+## Archivos y áreas que se prevé modificar
 - 
 
-## Implementation phases
+## Fases de implementación
 1. 
 
-## Acceptance criteria and test mapping
-| Acceptance criterion | Verification |
+## Criterios de aceptación y relación con pruebas
+| Criterio de aceptación | Verificación |
 |---|---|
 | REQ-XXX-AC-01 | |
 
-## Risks and rollback
+## Riesgos y reversión
 - 
 
-## Decisions requiring approval
+## Decisiones que requieren aprobación
 - 
 
-## Verification commands
+## Comandos de verificación
 - 
 
-## Handoff conditions
-What must be true before completion?
+## Condiciones de entrega
+¿Qué debe cumplirse para considerar terminado el trabajo?

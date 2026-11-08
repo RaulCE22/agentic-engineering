@@ -1,7 +1,7 @@
-# Work plans
+# Planes de trabajo
 
-Create one directory per substantial task under active/<slug>/ with plan.md and progress.md.
+Crea un directorio por cada tarea sustancial en active/<slug>/, con plan.md y progress.md.
 
-Move a plan to completed/ only after acceptance criteria are verified and handoff is complete. Keep plans concise and link to requirements, ADRs, source files and test evidence.
+Mueve un plan a completed/ únicamente después de verificar los criterios de aceptación y completar la entrega. Mantén los planes concisos y enlaza los requisitos, ADR, archivos fuente y evidencias de pruebas en lugar de copiar su contenido.
 
-Use `pnpm run new:plan -- <slug>`.
+Utiliza `pnpm run new:plan -- <slug>`.

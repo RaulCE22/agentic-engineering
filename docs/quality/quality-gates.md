@@ -1,20 +1,47 @@
-# Quality gates
+# Controles de calidad
 
-Quality comes from executable checks and traceable acceptance criteria, not an agent saying code looks correct.
+La calidad se demuestra mediante comprobaciones ejecutables y criterios de aceptación trazables, no porque un agente afirme que el código parece correcto.
 
-## Foundation repository
-Run `pnpm run verify`. This validates documentation, local Markdown links, skill metadata, workspace layout and toolchain requirements.
+## Repositorio base
+Ejecuta:
 
-## Application gates (configure when apps are scaffolded)
-As applicable: format:check, lint, typecheck, test:unit, test:integration, test:architecture and build. Do not add placeholder scripts that always return success.
+```bash
+pnpm run verify
+```
+
+Este comando valida la documentación, los enlaces Markdown locales, los metadatos de las skills, la estructura del workspace y los requisitos del entorno.
+
+## Controles de las aplicaciones
+Configura cuando se creen las aplicaciones, según corresponda:
+- format:check
+- lint
+- typecheck
+- test:unit
+- test:integration
+- test:architecture
+- build
+
+No añadas scripts ficticios que siempre devuelvan éxito.
 
 ## Frontend
-TypeScript strict checks, ESLint/formatting, Vitest tests, accessibility/validation tests for critical interactions and production Vite build.
+- Comprobaciones estrictas de TypeScript.
+- ESLint y formato.
+- Pruebas unitarias y de componentes con Vitest.
+- Pruebas de accesibilidad y validación para interacciones críticas.
+- Compilación de producción de Vite.
 
 ## Backend
-TypeScript strict checks, lint/formatting, unit tests, PostgreSQL integration tests, request/response contract tests, migration review, production build and health check.
+- Comprobaciones estrictas de TypeScript, lint y formato.
+- Pruebas unitarias de lógica de dominio y aplicación.
+- Pruebas de integración contra PostgreSQL.
+- Pruebas de contratos de petición y respuesta.
+- Revisión de migraciones y del proceso de despliegue.
+- Compilación de producción y health check.
 
-## Cross-cutting
-Architecture boundary checks, dependency/secret scanning in CI, no unexpected dependency changes, and critical flows mapped to automated tests.
+## Controles transversales
+- Comprobaciones de límites arquitectónicos.
+- Análisis de dependencias y secretos en CI.
+- Sin cambios de dependencias inesperados.
+- Flujos críticos vinculados a pruebas automatizadas.
 
-For every command report command, result (passed/failed/not run/blocked) and relevant error summary.
+Para cada comando informa del comando, resultado (correcto, fallido, no ejecutado o bloqueado) y resumen del error relevante.

@@ -1,31 +1,31 @@
-# ADR-XXXX: <Decision title>
+# ADR-XXXX: <Título de la decisión>
 
-- Status: Proposed
-- Date: YYYY-MM-DD
-- Decision owner: <owner>
+- Estado: Propuesto
+- Fecha: AAAA-MM-DD
+- Responsable de la decisión: <responsable>
 
-## Context
-What problem requires a durable choice?
+## Contexto
+¿Qué problema requiere una decisión duradera?
 
-## Decision
-What is being decided?
+## Decisión
+¿Qué se decide exactamente?
 
-## Options considered
-1. Option A — benefits and drawbacks.
-2. Option B — benefits and drawbacks.
+## Opciones consideradas
+1. Opción A — ventajas e inconvenientes.
+2. Opción B — ventajas e inconvenientes.
 
-## Rationale
-Why is this option preferred?
+## Justificación
+¿Por qué se prefiere esta opción?
 
-## Consequences
-- Positive:
-- Negative:
-- Risks:
+## Consecuencias
+- Positivas:
+- Negativas:
+- Riesgos:
 
-## Constraints and follow-up
-What must future implementation respect? What needs validation?
+## Restricciones y seguimiento
+¿Qué deberá respetar la implementación futura? ¿Qué necesita validación?
 
-## References
-- Official documentation:
-- Related requirements:
-- Related ADRs:
+## Referencias
+- Documentación oficial:
+- Requisitos relacionados:
+- ADR relacionados:

@@ -10,22 +10,22 @@ const pkg = JSON.parse(await readFile("package.json", "utf8"));
 const nodeMajor = Number(process.versions.node.split(".")[0]);
 const workspace = await readFile("pnpm-workspace.yaml", "utf8");
 
-if (nodeMajor !== 26) errors.push(`Expected Node.js 26.x, found ${process.versions.node}. Use .nvmrc/.node-version.`);
-if (!String(pkg.packageManager ?? "").startsWith("pnpm@12.")) errors.push("package.json must pin pnpm 12.x.");
-if (!workspace.includes("apps/*") || !workspace.includes("packages/*")) errors.push("pnpm-workspace.yaml must include apps/* and packages/*.");
+if (nodeMajor !== 26) errors.push(`Se esperaba Node.js 26.x, pero se encontró ${process.versions.node}. Utiliza .nvmrc/.node-version.`);
+if (!String(pkg.packageManager ?? "").startsWith("pnpm@12.")) errors.push("package.json debe fijar pnpm 12.x.");
+if (!workspace.includes("apps/*") || !workspace.includes("packages/*")) errors.push("pnpm-workspace.yaml debe incluir apps/* y packages/*.");
 
 for (const directory of ["apps/web", "apps/api", "packages/contracts", "infra", "docs", ".agents/skills", "scripts/engineering"]) {
-  if (!await exists(directory)) errors.push(`Missing expected directory: ${directory}`);
+  if (!await exists(directory)) errors.push(`Falta el directorio esperado: ${directory}`);
 }
 
 if (!await exists(".claude/skills")) {
-  console.warn("Warning: .claude/skills link is missing; Claude Code may not discover the shared skills.");
+  console.warn("Aviso: falta el enlace .claude/skills; Claude Code podría no descubrir las skills compartidas.");
 }
 
 if (errors.length) {
-  console.error("Workspace validation failed:");
+  console.error("La validación del workspace ha fallado:");
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log("Workspace validation passed.");
+  console.log("Validación del workspace correcta.");
 }

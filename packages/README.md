@@ -1,7 +1,8 @@
-# Shared packages
+# Paquetes compartidos
 
-Packages contain code with more than one real consumer. Keep this directory intentionally small.
+Los paquetes contienen código utilizado por más de un consumidor real. Mantén este directorio deliberadamente pequeño.
 
-Initial candidate: contracts/, containing shared Zod schemas and transport types consumed by web and API.
+Candidato inicial:
+- contracts/: esquemas Zod y tipos de transporte compartidos entre web y API.
 
-Do not move code into a shared package merely because it could theoretically be reused. Avoid generic utils packages and backend persistence models in frontend code.
+No muevas código a un paquete compartido solo porque podría reutilizarse en teoría. Evita paquetes genéricos utils y evita exponer modelos de persistencia del backend al frontend.

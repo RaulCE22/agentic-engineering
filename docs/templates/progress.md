@@ -1,28 +1,28 @@
-# Progress: <title>
+# Progreso: <título>
 
-- Requirement IDs: <REQ IDs>
+- Requisitos: <IDs REQ>
 - Plan: ./plan.md
-- Last updated: YYYY-MM-DD
+- Última actualización: AAAA-MM-DD
 
-## Current status
-Not started | In progress | Blocked | Ready for review | Complete
+## Estado actual
+No iniciado | En curso | Bloqueado | Listo para revisión | Completado
 
-## Completed
+## Trabajo completado
 - 
 
-## Changes made
+## Cambios realizados
 - 
 
-## Verification
-| Command/check | Result | Notes |
+## Verificación
+| Comando/comprobación | Resultado | Notas |
 |---|---|---|
-| | Not run | |
+| | No ejecutado | |
 
-## Decisions and discoveries
+## Decisiones y descubrimientos
 - 
 
-## Open questions / blockers
+## Preguntas abiertas / bloqueos
 - 
 
-## Next step
-One concrete next action.
+## Siguiente paso
+Una acción concreta.

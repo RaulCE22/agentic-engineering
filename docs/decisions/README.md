@@ -1,12 +1,12 @@
-# Architecture Decision Records
+# Registros de decisiones de arquitectura (ADR)
 
-A proposed ADR is not an accepted rule.
+Un ADR propuesto todavía no es una regla aceptada.
 
-| ID | Decision | Status |
+| ID | Decisión | Estado |
 |---|---|---|
-| ADR-0001 | Monorepo and workspace strategy | Accepted |
-| ADR-0002 | Frontend technology stack | Accepted |
-| ADR-0003 | Backend stack and integration choices | Proposed |
-| ADR-0004 | Hosting and infrastructure baseline | Accepted at high level |
+| ADR-0001 | Estrategia de monorepo y workspaces | Aceptado |
+| ADR-0002 | Stack tecnológico de frontend | Aceptado |
+| ADR-0003 | Stack backend y decisiones de integración | Propuesto |
+| ADR-0004 | Plataforma de alojamiento e infraestructura | Aceptado a alto nivel |
 
-Use docs/templates/adr.md for new decisions. Do not silently edit accepted ADRs; supersede them with a new record.
+Utiliza docs/templates/adr.md para registrar nuevas decisiones. No modifiques silenciosamente una decisión aceptada: sustitúyela mediante un nuevo ADR.

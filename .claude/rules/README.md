@@ -1,3 +1,5 @@
-# Claude-specific rules
+# Reglas específicas de Claude
 
-Canonical instructions are in AGENTS.md and shared architecture documents. Add path-scoped rules only for Claude-specific behaviour or where automatic loading materially improves the workflow. Avoid repeating shared conventions.
+Las instrucciones canónicas están en AGENTS.md y en los documentos compartidos de arquitectura. Añade reglas asociadas a rutas únicamente para comportamientos específicos de Claude o cuando su carga automática mejore claramente el flujo de trabajo.
+
+Evita repetir convenciones compartidas.

@@ -1,29 +1,29 @@
-# ADR-0003: Backend technology stack
+# ADR-0003: Stack tecnológico de backend
 
-- Status: Proposed
-- Date: 2026-11-08
-- Decision owner: Project owner
+- Estado: Propuesto
+- Fecha: 2026-11-08
+- Responsable de la decisión: Propietario del proyecto
 
-## Context
-The desired backend is TypeScript-first, lightweight and integrated with React and PostgreSQL.
+## Contexto
+El backend deseado debe estar basado en TypeScript, ser ligero e integrarse con React y PostgreSQL.
 
-## Proposed decision
-Evaluate Node.js 26 LTS, Hono with @hono/node-server, PostgreSQL, Drizzle ORM/Drizzle Kit, Better Auth, Zod and @hono/zod-validator.
+## Decisión propuesta
+Evaluar Node.js 26 LTS, Hono con @hono/node-server, PostgreSQL, Drizzle ORM/Drizzle Kit, Better Auth, Zod y @hono/zod-validator.
 
-## Rationale
-Hono runs on Node.js through its Node adapter. Better Auth documents Hono integration and a Drizzle adapter supporting PostgreSQL. Drizzle supports node-postgres and postgres.js drivers.
+## Justificación
+Hono funciona en Node.js mediante su adaptador. Better Auth documenta una integración con Hono y un adaptador Drizzle compatible con PostgreSQL. Drizzle soporta los drivers node-postgres y postgres.js.
 
-## Required proof of concept
-1. Run minimal Hono server on Node LTS.
-2. Connect Drizzle to local PostgreSQL.
-3. Generate and apply a Drizzle Kit migration.
-4. Mount Better Auth and generate its schema.
-5. Verify session cookies, trusted origins, CORS and logout.
-6. Validate a request/response using Zod.
-7. Compare pg and postgres.js for pooling, deployment and auth-adapter compatibility.
+## Prueba de concepto requerida
+1. Ejecutar un servidor Hono mínimo sobre Node LTS.
+2. Conectar Drizzle a PostgreSQL local.
+3. Generar y aplicar una migración con Drizzle Kit.
+4. Montar Better Auth y generar su esquema.
+5. Verificar cookies de sesión, trusted origins, CORS y cierre de sesión.
+6. Validar una petición y una respuesta mediante Zod.
+7. Comparar pg y postgres.js en pooling, despliegue y compatibilidad con el adaptador de autenticación.
 
-## Open choices
-PostgreSQL driver; REST/OpenAPI vs Hono RPC vs hybrid; error envelope/pagination; shared contract location; email provider; cookie/session strategy; rate limiting and audit events.
+## Decisiones abiertas
+Driver PostgreSQL; REST/OpenAPI frente a Hono RPC o una combinación; formato de errores y paginación; ubicación de contratos compartidos; proveedor de correo; estrategia de cookies y sesiones; limitación de peticiones y auditoría.
 
-## Consequences
-No production API scaffold until proof of concept and open choices are reviewed.
+## Consecuencias
+No se generará una API de producción hasta revisar la prueba de concepto y cerrar las decisiones pendientes.

@@ -1,25 +1,25 @@
 ---
 name: code-review
-description: Independently review a change against requirements, architecture, security, maintainability and verification evidence without modifying files.
+description: Revisa de forma independiente un cambio frente a requisitos, arquitectura, seguridad, mantenibilidad y evidencias de verificación, sin modificar archivos.
 ---
 
-# Code review
+# Revisión de código
 
-## Inputs
-Requirement, approved plan, diff/commit and verification report.
+## Entradas
+Requisito, plan aprobado, diff o commit e informe de verificación.
 
-## Review order
-1. Understand intended behaviour and scope.
-2. Inspect the complete diff.
-3. Check acceptance criteria against implementation and tests.
-4. Check module boundaries and dependency direction.
-5. Look for security, validation, authorization and secret-exposure issues.
-6. Check error handling, data integrity, migrations and compatibility.
-7. Evaluate test quality and assertion coverage.
-8. Identify unnecessary complexity, duplication and unrelated changes.
+## Orden de revisión
+1. Comprende el comportamiento esperado y el alcance.
+2. Inspecciona el diff completo.
+3. Comprueba cada criterio de aceptación frente a la implementación y las pruebas.
+4. Revisa los límites entre módulos y la dirección de dependencias.
+5. Busca problemas de seguridad, validación, autorización y exposición de secretos.
+6. Comprueba el tratamiento de errores, integridad de datos, migraciones y compatibilidad.
+7. Evalúa la calidad de las pruebas y lo que realmente verifican sus aserciones.
+8. Identifica complejidad innecesaria, duplicación y cambios ajenos al alcance.
 
-## Findings
-Report actionable findings with severity, file/location, impact and recommendation. Separate blockers from suggestions.
+## Hallazgos
+Informa de problemas accionables con severidad, archivo/ubicación, impacto y recomendación. Separa los bloqueos de las sugerencias.
 
-## Constraints
-Read-only. Do not automatically fix findings. Do not report personal style preferences as defects. State limitations if diff or test evidence is unavailable.
+## Restricciones
+Solo lectura: no edites archivos ni apliques correcciones automáticamente. No marques preferencias personales de estilo como defectos. Indica las limitaciones cuando no dispongas del diff o de las evidencias de pruebas.

@@ -1,6 +1,6 @@
 ---
-description: Canonical source-of-truth pointer for project conventions and agent workflow.
+description: Referencia canónica a las instrucciones y convenciones del repositorio.
 alwaysApply: true
 ---
 
-Follow the root AGENTS.md as the canonical project instruction file. Read only documentation relevant to the task, starting from docs/README.md. Shared procedures live in .agents/skills/. Do not duplicate or override canonical rules in Cursor-specific files.
+Sigue el archivo raíz AGENTS.md como fuente canónica de las instrucciones del proyecto. Empieza por docs/README.md y consulta únicamente la documentación relevante para la tarea. Los procedimientos compartidos están en .agents/skills/. No dupliques ni contradigas las reglas canónicas en archivos específicos de Cursor.

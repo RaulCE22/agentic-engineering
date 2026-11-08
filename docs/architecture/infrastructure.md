@@ -1,31 +1,39 @@
-# Infrastructure architecture
+# Arquitectura de infraestructura
 
-Status: Existing hosting baseline; deployment decisions remain application-specific.
+Estado: plataforma de alojamiento existente; los detalles de despliegue se definen para cada aplicación.
 
-## Current platform
-- Hetzner server.
-- Docker and Docker Compose.
-- Dockge for Compose stack management.
-- Traefik as reverse proxy and TLS entry point.
-- Cloudflare for DNS, domain management and edge/security controls.
+## Plataforma actual
+- Servidor Hetzner.
+- Docker y Docker Compose.
+- Dockge para gestionar stacks Compose.
+- Traefik como proxy inverso y punto de entrada TLS.
+- Cloudflare para DNS, gestión de dominios y controles perimetrales.
 
-## Logical request path
-Cloudflare DNS/edge -> Hetzner public ingress -> Traefik -> application container.
+## Ruta lógica de las peticiones
+Cloudflare DNS/perímetro -> entrada pública de Hetzner -> Traefik -> contenedor de aplicación.
 
-PostgreSQL and internal services should be reachable only over private Docker networks. Dockge administration must have a private, authenticated access path.
+PostgreSQL y los servicios internos deben ser accesibles únicamente mediante redes Docker privadas. La administración de Dockge debe tener una vía de acceso privada y autenticada.
 
-## Repository responsibilities
-- Application Dockerfiles live with their app, normally apps/<app>/Dockerfile.
-- Stack/deployment configuration lives under infra/.
-- Keep local development Compose separate from production stacks.
-- Commit only .env.example files with safe placeholders.
-- Use deliberate image tags or commit SHAs in production; avoid latest.
-- Add health checks and restart policies deliberately.
-- Run containers as non-root where practical.
-- Expose only ports required by Traefik. Do not publish PostgreSQL publicly.
+## Responsabilidades del repositorio
+- Los Dockerfiles de aplicación viven junto a cada aplicación, normalmente en apps/<app>/Dockerfile.
+- La configuración de stacks y despliegue vive en infra/.
+- Mantén separadas la configuración Compose local y la de producción.
+- Versiona únicamente archivos .env.example con valores ficticios seguros.
+- Utiliza etiquetas de imagen deliberadas o SHA de commit en producción; evita latest.
+- Añade health checks y políticas de reinicio de forma consciente.
+- Ejecuta los contenedores como usuario no privilegiado cuando sea viable.
+- Expón únicamente los puertos que necesite Traefik. No publiques PostgreSQL.
 
-## Cloudflare and Traefik
-For each deployment document TLS termination, certificate issuance, Cloudflare proxy mode and origin restrictions. Keep scoped Cloudflare API tokens server-side.
+## Cloudflare y Traefik
+Para cada despliegue documenta dónde termina TLS, cómo se emiten los certificados, si está activo el proxy de Cloudflare y cómo se restringe el origen. Si Traefik utiliza el desafío DNS de Cloudflare, guarda el token API limitado en el servidor.
 
-## Production readiness
-DNS and proxy mode reviewed; TLS issuance tested; firewall restricted; Dockge protected; database private; backup/restore tested; health checks/logs available; secrets external to Git; rollback procedure documented.
+## Preparación para producción
+- DNS y modo proxy revisados.
+- Emisión y renovación TLS probadas.
+- Firewall limitado a los puertos necesarios.
+- Dockge protegido.
+- Base de datos sin puertos públicos.
+- Copia de seguridad y restauración probadas.
+- Comprobaciones de salud y logs disponibles.
+- Secretos almacenados fuera de Git.
+- Procedimiento de rollback documentado.

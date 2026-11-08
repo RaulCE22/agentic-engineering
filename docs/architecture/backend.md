@@ -1,25 +1,25 @@
-# Backend architecture
+# Arquitectura backend
 
-Status: Proposed — not fully ratified.
+Estado: propuesta; todavía no está ratificada por completo.
 
-The candidate stack aligns with the TypeScript monorepo, but the PostgreSQL driver, API contract strategy, error conventions and authentication deployment details remain open. Do not treat these as fully settled.
+El stack candidato encaja con el monorepo TypeScript, pero siguen pendientes el driver PostgreSQL, la estrategia de contratos API, las convenciones de error y los detalles de despliegue de autenticación. Los agentes no deben tratar estas decisiones como cerradas.
 
-## Candidate technology
+## Tecnologías candidatas
 - Node.js 26 LTS.
-- Hono with @hono/node-server.
+- Hono con @hono/node-server.
 - PostgreSQL.
-- Drizzle ORM and Drizzle Kit.
+- Drizzle ORM y Drizzle Kit.
 - Better Auth.
-- Zod and @hono/zod-validator.
+- Zod y @hono/zod-validator.
 
-Better Auth documents direct Hono integration using Web Request/Response APIs and a Drizzle adapter supporting PostgreSQL. Do not reimplement password or session management.
+Better Auth documenta una integración directa con Hono mediante las API Web Request/Response y ofrece un adaptador Drizzle compatible con PostgreSQL. No reimplementes la gestión de contraseñas ni sesiones.
 
-## Proposed style: modular monolith
+## Estilo propuesto: monolito modular
 
 ```text
 apps/api/src/
-  app/                  # Hono app composition and middleware
-  config/               # validated environment configuration
+  app/                  # composición de Hono y middleware
+  config/               # configuración de entorno validada
   modules/
     auth/
     <domain>/
@@ -37,33 +37,33 @@ apps/api/src/
     middleware/
 ```
 
-This is a starting shape, not a requirement to create empty layers. Let the first domain feature validate the structure.
+Esta estructura es un punto de partida, no una obligación de crear capas vacías. La primera funcionalidad de dominio debe ayudar a validar la organización.
 
-## Dependency rules
-- Routes translate HTTP and call application services.
-- Services/use cases implement workflows.
-- Domain rules do not depend on Hono context or HTTP objects.
-- Repositories own database access.
-- Drizzle schema and query types remain in the backend.
-- Validate untrusted input with Zod at system boundaries.
-- Authentication establishes identity; authorization is enforced by the relevant server-side operation.
-- Return a consistent error format; do not expose stack traces or database internals.
+## Reglas de dependencias
+- Las rutas traducen HTTP y llaman a servicios de aplicación.
+- Los servicios o casos de uso implementan los flujos de la aplicación.
+- Las reglas de dominio no dependen del contexto Hono ni de objetos HTTP.
+- Los repositorios son propietarios del acceso a la base de datos.
+- El esquema Drizzle y sus tipos de consulta permanecen en el backend.
+- Valida con Zod los datos no confiables en los límites del sistema.
+- La autenticación establece la identidad; la autorización se aplica en la operación del servidor correspondiente.
+- Devuelve un formato de error coherente; no expongas stack traces ni detalles internos de la base de datos.
 
-## Database and migrations
-- PostgreSQL is the system of record.
-- Schema and migrations belong under apps/api.
-- Generate SQL migrations with Drizzle Kit and review them.
-- Apply committed migrations in deployments. Do not use schema push as the production migration process.
-- Separate credentials/databases by environment.
-- Define backup, restore and retention before production data is stored.
+## Base de datos y migraciones
+- PostgreSQL es la fuente de verdad de los datos.
+- El esquema y las migraciones pertenecen a apps/api.
+- Genera migraciones SQL con Drizzle Kit y revísalas.
+- Aplica migraciones versionadas en los despliegues. No utilices schema push como proceso de migración en producción.
+- Separa credenciales y bases de datos por entorno.
+- Define copias de seguridad, restauración y retención antes de almacenar datos de producción.
 
-## Open decisions
-1. node-postgres (pg) vs postgres.js driver.
-2. REST + OpenAPI vs Hono RPC vs a documented hybrid.
-3. Error envelope and pagination conventions.
-4. Which Zod contracts belong in packages/contracts.
-5. Email provider for verification and password reset.
-6. Cookie domain, trusted origins, CORS and proxy behaviour per deployment.
-7. Rate limiting, audit events and account recovery policy.
+## Decisiones pendientes
+1. Driver node-postgres (pg) o postgres.js.
+2. Contratos REST + OpenAPI, Hono RPC o una combinación documentada.
+3. Formato de errores y convenciones de paginación.
+4. Qué esquemas Zod compartidos pertenecen a packages/contracts.
+5. Proveedor de correo para verificación y recuperación de contraseña.
+6. Dominio de cookies, trusted origins, CORS y comportamiento del proxy en cada despliegue.
+7. Limitación de peticiones, eventos de auditoría y política de recuperación de cuentas.
 
-See architecture/pending-decisions.md and ADR-0003.
+Consulta architecture/pending-decisions.md y ADR-0003.

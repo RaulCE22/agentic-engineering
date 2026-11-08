@@ -1,7 +1,7 @@
-# Hetzner server
+# Servidor Hetzner
 
-Document server inventory, OS, firewall, Docker installation, storage, update policy, monitoring and backup operations here.
+Documenta aquí el inventario del servidor, sistema operativo, firewall, instalación Docker, almacenamiento, política de actualizaciones, monitorización y copias de seguridad.
 
-Do not put private IPs or credentials here if security-sensitive. Store access procedures in a secure password/secret manager, not Git.
+No incluyas direcciones IP privadas ni credenciales si son sensibles. Guarda los procedimientos de acceso en un gestor seguro de contraseñas o secretos, no en Git.
 
-Production readiness requires supported OS/security updates, restricted SSH, minimum firewall ports, protected Docker/volumes, off-host backups, tested restoration and resource monitoring.
+Antes de producción se requiere: sistema operativo y parches soportados, SSH restringido, puertos mínimos en firewall, Docker y volúmenes protegidos, copias externas al mismo dominio de fallo, restauración probada y monitorización de recursos.

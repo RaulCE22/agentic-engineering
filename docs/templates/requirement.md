@@ -1,44 +1,44 @@
-# REQ-XXX: <Short requirement title>
+# REQ-XXX: <Título breve del requisito>
 
-- Status: Draft
-- Priority: Medium
-- Owner: <owner>
-- Related ADRs: <IDs or none>
+- Estado: Borrador
+- Prioridad: Media
+- Responsable: <responsable>
+- ADR relacionados: <IDs o ninguno>
 
-## Purpose
-What user or business problem does this solve?
+## Propósito
+¿Qué problema de usuario o negocio resuelve este requisito?
 
-## Scope
-- In scope:
-- Out of scope:
+## Alcance
+- Incluye:
+- No incluye:
 
-## Actors and permissions
-Who can perform this behaviour?
+## Actores y permisos
+¿Quién puede ejecutar este comportamiento? ¿Qué autorización necesita?
 
-## Functional requirements
-Describe observable behaviour. Keep each requirement specific.
+## Requisitos funcionales
+Describe comportamientos observables. Mantén cada requisito específico.
 
-## Business rules
-- BR-01:
+## Reglas de negocio
+- RN-01:
 
-## Acceptance criteria
+## Criterios de aceptación
 
-### REQ-XXX-AC-01 — <criterion>
-Given:
-When:
-Then:
+### REQ-XXX-AC-01 — <criterio>
+Dado:
+Cuando:
+Entonces:
 
-## Data and API impact
-- Data:
-- API/contracts:
-- Migration:
+## Impacto en datos y API
+- Datos:
+- API/contratos:
+- Migración:
 
-## Non-functional requirements
-Security, performance, accessibility, reliability or other constraints.
+## Requisitos no funcionales
+Seguridad, rendimiento, accesibilidad, fiabilidad u otras restricciones.
 
-## Dependencies and open questions
+## Dependencias y preguntas abiertas
 - 
 
-## Traceability
-- Tests:
-- Implementation plan:
+## Trazabilidad
+- Pruebas:
+- Plan de implementación:

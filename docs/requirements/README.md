@@ -1,7 +1,7 @@
-# Requirements
+# Requisitos
 
-Create one document per independently testable requirement using REQ-### identifiers and docs/templates/requirement.md.
+Crea un documento por cada requisito que pueda probarse de forma independiente, utilizando identificadores REQ-### y la plantilla docs/templates/requirement.md.
 
-Requirements describe product behaviour and acceptance criteria. They must not prescribe implementation details unless a technical constraint is necessary.
+Los requisitos describen comportamiento del producto y criterios de aceptación. No deben imponer detalles de implementación salvo que exista una restricción técnica necesaria.
 
-Use `pnpm run new:requirement -- <slug>` to create the next numbered draft.
+Utiliza `pnpm run new:requirement -- <slug>` para crear el siguiente borrador numerado.

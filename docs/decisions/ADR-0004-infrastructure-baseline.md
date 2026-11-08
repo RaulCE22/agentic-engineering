@@ -1,17 +1,20 @@
-# ADR-0004: Hosting and infrastructure baseline
+# ADR-0004: Plataforma de alojamiento e infraestructura
 
-- Status: Accepted (high-level platform)
-- Date: 2026-11-08
-- Decision owner: Project owner
+- Estado: Aceptado (plataforma de alto nivel)
+- Fecha: 2026-11-08
+- Responsable de la decisión: Propietario del proyecto
 
-## Context
-Personal applications will run on an existing Hetzner server with Docker and Cloudflare domain/security management.
+## Contexto
+Las aplicaciones personales se ejecutarán en un servidor Hetzner existente, con despliegue basado en Docker y gestión de dominios y seguridad mediante Cloudflare.
 
-## Decision
-Use Hetzner, Docker/Compose, Dockge for stack management, Traefik as reverse proxy/ingress and Cloudflare for DNS/edge controls.
+## Decisión
+Utilizar Hetzner, Docker y Docker Compose, Dockge para gestionar stacks, Traefik como proxy inverso y punto de entrada, y Cloudflare para DNS y controles perimetrales.
 
-## Consequences
-Each deployable app has a reproducible Docker build. Stack configuration is versioned under infra/. Runtime secrets remain on the server and never enter Git. Public ingress and internal data services have separate network boundaries.
+## Consecuencias
+- Cada aplicación desplegable tendrá una compilación Docker reproducible.
+- La configuración de stacks estará versionada en infra/.
+- Los secretos de ejecución permanecerán en el servidor y nunca se incluirán en Git.
+- Los puntos de entrada públicos y los servicios internos de datos tendrán límites de red separados.
 
-## Not decided
-TLS strategy, Cloudflare proxy mode, firewall, private networks, backups, monitoring and secret storage must be documented before production.
+## Decisiones no cubiertas
+La estrategia TLS, el modo proxy de Cloudflare, el firewall, las redes privadas, las copias de seguridad, la monitorización y el almacenamiento de secretos deberán documentarse antes del primer despliegue productivo.

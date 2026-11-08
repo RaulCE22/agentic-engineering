@@ -1,29 +1,30 @@
-# Agent context management
+# Gestión del contexto de los agentes
 
-## Goal
-Provide enough context for correctness without loading broad, repetitive or stale instructions.
+## Objetivo
+Proporcionar contexto suficiente para trabajar correctamente sin cargar instrucciones extensas, repetitivas u obsoletas. El contexto se selecciona deliberadamente; no es necesario leer todo el repositorio.
 
-## Context tiers
-- Tier 1: provider system instructions, AGENTS.md, small provider adapter, relevant always-on rules and stable tool definitions.
-- Tier 2: relevant requirements, architecture pages, accepted ADRs, applicable skills/references and current plan.
-- Tier 3: source files, tests, package manifests, configuration, tool output, errors, logs and diffs.
+## Niveles de contexto
+- Nivel 1: instrucciones del proveedor, AGENTS.md, adaptador breve, reglas permanentes relevantes y definiciones estables de herramientas.
+- Nivel 2: requisitos pertinentes, páginas de arquitectura, ADR aceptados, skills y referencias aplicables, y plan actual.
+- Nivel 3: archivos fuente, pruebas, manifiestos, configuración, salidas de herramientas, errores, logs y diferencias de código.
 
-## Progressive disclosure
-1. Start at docs/README.md and follow relevant links.
-2. Read one requirement and its dependencies, not the entire directory.
-3. Load a skill when needed; read its references only when directed.
-4. Delegate bounded investigations when a concise summary can replace lengthy tool history.
-5. Keep summaries factual and linked to source files.
-6. Do not paste complete source files into plans or progress logs.
-7. Before switching sessions, compact work into plan.md and progress.md.
+## Carga progresiva
+1. Empieza por docs/README.md y sigue solo los enlaces relevantes.
+2. Lee un requisito y sus dependencias, no todo el directorio.
+3. Carga una skill cuando su procedimiento sea necesario.
+4. Lee las referencias de una skill únicamente cuando esta lo indique.
+5. Delega investigaciones acotadas cuando un resumen breve pueda sustituir un historial extenso de herramientas.
+6. Mantén los resúmenes concisos, objetivos y enlazados con los archivos fuente.
+7. No pegues archivos fuente completos en planes ni registros de progreso.
+8. Antes de cambiar de sesión, resume el trabajo en plan.md y progress.md.
 
-## Prompt-cache hygiene
-- Keep stable instructions and tool definitions unchanged between similar calls where practical.
-- Put frequently changing task details after stable context where provider controls allow.
-- Avoid timestamps, random IDs and dynamic status in globally loaded instruction files.
-- Do not add irrelevant tokens just to reach a cache threshold.
-- Prompt caching is a provider optimization, not project memory or correctness.
-- CLI subscription usage may not follow direct API cache pricing.
+## Buenas prácticas para la caché de prompts
+- Mantén estables las instrucciones y definiciones de herramientas entre llamadas similares cuando sea práctico.
+- Coloca los datos específicos y cambiantes de la tarea después del contexto estable cuando el proveedor permita controlar el orden.
+- Evita fechas, identificadores aleatorios y estados dinámicos en archivos de instrucciones cargados permanentemente.
+- No añadas tokens irrelevantes solo para alcanzar un umbral de caché.
+- La caché de prompts es una optimización del proveedor, no la memoria del proyecto ni un mecanismo de corrección.
+- El consumo de una suscripción CLI puede no seguir las tarifas de caché de la API directa.
 
-## Session handoff
-Update progress.md with changes, actual verification results, decisions/open questions and one concrete next step. Do not rely on chat history as the only record of project state.
+## Traspaso entre sesiones
+Actualiza progress.md con los cambios, resultados reales de verificación, decisiones o dudas abiertas y un siguiente paso concreto. No dependas del historial del chat como única memoria del proyecto.

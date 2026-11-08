@@ -1,5 +1,5 @@
-# Claude Code adapter
+# Adaptador de Claude Code
 
-CLAUDE.md imports the canonical AGENTS.md. Shared Agent Skills are stored in .agents/skills/ and exposed to Claude Code through the .claude/skills symbolic link.
+CLAUDE.md importa el archivo canónico AGENTS.md. Las skills compartidas se guardan en .agents/skills/ y se exponen a Claude Code mediante el enlace simbólico .claude/skills.
 
-Keep Claude-specific settings here only when they are genuinely provider-specific. Do not duplicate architecture or coding rules.
+Mantén aquí únicamente la configuración específica de Claude que aporte valor real. No dupliques la arquitectura ni las convenciones de programación.

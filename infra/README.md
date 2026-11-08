@@ -1,11 +1,11 @@
-# Infrastructure
+# Infraestructura
 
-Contains deployment documentation and versioned infrastructure configuration. Application Dockerfiles belong with their apps; stack-level configuration belongs here.
+Este directorio contiene documentación de despliegue y configuración de infraestructura versionada. Los Dockerfiles de aplicación pertenecen a cada aplicación; la configuración de stacks vive aquí.
 
-- hetzner/: server baseline and operations.
-- docker/: Dockerfile and Compose conventions.
-- dockge/: stack management.
-- traefik/: ingress and TLS configuration.
-- cloudflare/: DNS, proxy and security configuration.
+- hetzner/: base del servidor y operaciones.
+- docker/: convenciones y plantillas Dockerfile/Compose.
+- dockge/: gestión de stacks.
+- traefik/: entrada, proxy inverso y TLS.
+- cloudflare/: DNS, proxy y seguridad.
 
-Never commit real environment files, tokens, private keys, credentials or production data.
+Nunca incluyas archivos de entorno reales, tokens, claves privadas, credenciales ni datos de producción.

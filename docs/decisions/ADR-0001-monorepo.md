@@ -1,17 +1,21 @@
-# ADR-0001: Monorepo and workspace strategy
+# ADR-0001: Estrategia de monorepo y workspaces
 
-- Status: Accepted
-- Date: 2026-11-08
-- Decision owner: Project owner
+- Estado: Aceptado
+- Fecha: 2026-11-08
+- Responsable de la decisión: Propietario del proyecto
 
-## Context
-Applications share engineering standards, documentation, scripts and potentially contracts, while requiring independent build and deployment lifecycles.
+## Contexto
+Las aplicaciones comparten estándares de ingeniería, documentación, scripts y posiblemente contratos, pero necesitan ciclos de compilación y despliegue independientes.
 
-## Decision
-Use one Git repository with pnpm workspaces. Deployable units live in apps/; genuinely shared code lives in packages/. Keep workspace orchestration minimal and do not introduce a task runner initially.
+## Decisión
+Utilizar un único repositorio Git con pnpm workspaces. Las unidades desplegables viven en apps/; el código realmente compartido vive en packages/. Mantener mínima la orquestación del workspace y no introducir inicialmente un ejecutor de tareas.
 
-## Consequences
-One lockfile and consistent dependency management; applications build/deploy independently; package boundaries remain explicit; CI can later use workspace filters; a task runner may be added if justified.
+## Consecuencias
+- Un único lockfile y gestión coherente de dependencias.
+- Las aplicaciones se compilan y despliegan de forma independiente.
+- Los límites de los paquetes compartidos deben ser explícitos.
+- CI podrá utilizar filtros del workspace.
+- Se podrá incorporar un ejecutor de tareas si el crecimiento lo justifica.
 
-## Constraints
-No circular workspace dependencies. No application imports another application's internal code. Do not create shared packages without multiple real consumers.
+## Restricciones
+No se permiten dependencias circulares entre workspaces. Una aplicación no importa código interno de otra aplicación. No se crean paquetes compartidos sin consumidores reales múltiples.

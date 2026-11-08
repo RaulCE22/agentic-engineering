@@ -1,9 +1,9 @@
-# Applications
+# Aplicaciones
 
-Each directory under apps/ is an independently deployable application with its own package.json, build, tests, runtime configuration and Dockerfile.
+Cada directorio de apps/ representa una aplicación desplegable de forma independiente, con su propio package.json, compilación, pruebas, configuración de ejecución y Dockerfile.
 
-Initial applications:
-- web/: React + Vite browser application.
-- api/: Node.js + Hono API (backend stack proposed).
+Aplicaciones iniciales:
+- web/: aplicación de navegador React + Vite.
+- api/: API Node.js + Hono (stack backend propuesto).
 
-Add future apps only when they have a separate runtime or deployment lifecycle; otherwise keep them as modules of an existing app.
+Las futuras aplicaciones pueden incluir workers, herramientas administrativas o clientes móviles. Añade una nueva aplicación cuando tenga un runtime o ciclo de despliegue independiente; en caso contrario, mantenla como módulo de una aplicación existente.

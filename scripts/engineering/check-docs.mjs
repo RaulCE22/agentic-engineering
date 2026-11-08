@@ -8,7 +8,8 @@ const requiredFiles = [
   "docs/README.md", "docs/requirements/README.md",
   "docs/architecture/overview.md", "docs/architecture/backend.md",
   "docs/architecture/frontend.md", "docs/architecture/pending-decisions.md",
-  "docs/quality/quality-gates.md", "docs/decisions/README.md",
+  "docs/quality/quality-gates.md", "docs/quality/language-policy.md",
+  "docs/decisions/README.md",
   ".agents/skills/feature-discovery/SKILL.md",
   ".agents/skills/feature-planning/SKILL.md",
   ".agents/skills/feature-implementation/SKILL.md",
@@ -34,7 +35,7 @@ async function collectMarkdown(directory) {
 }
 
 for (const file of requiredFiles) {
-  if (!await exists(path.join(root, file))) errors.push(`Missing required file: ${file}`);
+  if (!await exists(path.join(root, file))) errors.push(`Falta el archivo obligatorio: ${file}`);
 }
 
 const markdownFiles = await collectMarkdown(root);
@@ -49,7 +50,7 @@ for (const filePath of markdownFiles) {
     const clean = decodeURIComponent(target.split("#")[0].split("?")[0]);
     if (!clean) continue;
     const resolved = path.resolve(path.dirname(filePath), clean);
-    if (!await exists(resolved)) errors.push(`Broken Markdown link in ${path.relative(root, filePath)}: ${target}`);
+    if (!await exists(resolved)) errors.push(`Enlace Markdown roto en ${path.relative(root, filePath)}: ${target}`);
   }
 }
 
@@ -58,25 +59,25 @@ const skillEntries = await readdir(skillRoot, { withFileTypes: true });
 for (const entry of skillEntries.filter((item) => item.isDirectory())) {
   const skillPath = path.join(skillRoot, entry.name, "SKILL.md");
   if (!await exists(skillPath)) {
-    errors.push(`Skill is missing SKILL.md: ${entry.name}`);
+    errors.push(`La skill no contiene SKILL.md: ${entry.name}`);
     continue;
   }
   const source = await readFile(skillPath, "utf8");
   const frontmatter = source.match(/^---\s*\n([\s\S]*?)\n---/);
   if (!frontmatter) {
-    errors.push(`Skill frontmatter is missing: ${entry.name}`);
+    errors.push(`Faltan los metadatos iniciales de la skill: ${entry.name}`);
     continue;
   }
   const name = frontmatter[1].match(/^name:\s*(.+)$/m)?.[1]?.trim();
   const description = frontmatter[1].match(/^description:\s*(.+)$/m)?.[1]?.trim();
-  if (name !== entry.name) errors.push(`Skill name must match directory: ${entry.name}`);
-  if (!description || description.length < 20) errors.push(`Skill description is missing or too short: ${entry.name}`);
+  if (name !== entry.name) errors.push(`El identificador name debe coincidir con el directorio: ${entry.name}`);
+  if (!description || description.length < 20) errors.push(`La descripción de la skill falta o es demasiado breve: ${entry.name}`);
 }
 
 if (errors.length) {
-  console.error("Documentation validation failed:");
+  console.error("La validación de documentación ha fallado:");
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log(`Documentation validation passed (${markdownFiles.length} Markdown files; ${requiredFiles.length} required files).`);
+  console.log(`Validación de documentación correcta (${markdownFiles.length} archivos Markdown; ${requiredFiles.length} archivos obligatorios).`);
 }

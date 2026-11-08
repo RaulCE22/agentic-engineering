@@ -1,29 +1,29 @@
-# Code review: <title>
+# Revisión de código: <título>
 
-- Requirement IDs: <REQ IDs>
-- Commit / diff: <reference>
-- Reviewer: <agent or person>
-- Date: YYYY-MM-DD
+- Requisitos: <IDs REQ>
+- Commit / diff: <referencia>
+- Revisor: <agente o persona>
+- Fecha: AAAA-MM-DD
 
-## Scope reviewed
+## Alcance revisado
 - 
 
-## Findings
-| Severity | File / location | Finding | Recommendation |
+## Hallazgos
+| Severidad | Archivo / ubicación | Hallazgo | Recomendación |
 |---|---|---|---|
-| Critical / High / Medium / Low | | | |
+| Crítica / Alta / Media / Baja | | | |
 
-## Requirement coverage
+## Cobertura de requisitos
 - 
 
-## Architecture and security
+## Arquitectura y seguridad
 - 
 
-## Tests and verification evidence
+## Evidencias de pruebas y verificaciones
 - 
 
-## Verdict
-Approved | Approved with follow-up | Changes required
+## Veredicto
+Aprobado | Aprobado con seguimiento | Requiere cambios
 
-## Residual risks
+## Riesgos residuales
 - 

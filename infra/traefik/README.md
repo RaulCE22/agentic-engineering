@@ -1,9 +1,16 @@
 # Traefik
 
-Traefik is the public reverse proxy and ingress entry point.
+Traefik es el proxy inverso público y punto de entrada de las aplicaciones.
 
-For each app document hostname/router rule, upstream service and internal port, TLS resolver, middleware/security headers, health checks, Cloudflare proxy status and logging policy.
+Para cada aplicación documenta:
+- Hostname y regla del router.
+- Servicio de destino y puerto interno.
+- Resolver TLS y certificados.
+- Middleware y cabeceras de seguridad.
+- Comprobaciones de salud.
+- Estado del proxy de Cloudflare.
+- Política de logs de acceso y errores.
 
-Expose only intended HTTP/HTTPS ingress ports. Do not expose Docker API or dashboard publicly. If using the Docker provider, protect access to the Docker socket with a restricted mechanism.
+Expón únicamente los puertos HTTP/HTTPS necesarios. No publiques la API Docker ni el dashboard. Si utilizas el proveedor Docker, protege el acceso al socket mediante un mecanismo restringido apropiado.
 
-TLS mode and certificate issuance remain open until the first deployment ADR is approved.
+El modo TLS y la emisión de certificados siguen pendientes hasta aprobar el ADR del primer despliegue.

@@ -1,42 +1,42 @@
-# Architecture overview
+# Visión general de la arquitectura
 
-## System shape
-A pnpm monorepo containing independently deployable applications, deliberately small shared packages, product and architecture documentation, provider-neutral skills, engineering scripts and deployment assets.
+## Estructura del sistema
+Monorepo pnpm con aplicaciones desplegables de forma independiente, paquetes compartidos deliberadamente pequeños, documentación de producto y arquitectura, skills independientes del proveedor, scripts de ingeniería y recursos de despliegue.
 
-## Initial topology
+## Topología inicial
 
 ```text
-Browser
-  |
+Navegador
+   |
  HTTPS
-  v
-Cloudflare DNS / edge controls
-  |
-Hetzner server
-  |
-Traefik reverse proxy
-  +---- web container (apps/web)
-  +---- API container (apps/api)
-             |
-         PostgreSQL
+   v
+Cloudflare (DNS / controles perimetrales)
+   |
+Servidor Hetzner
+   |
+Proxy inverso Traefik
+   +---- Contenedor web (apps/web)
+   +---- Contenedor API (apps/api)
+                  |
+              PostgreSQL
 ```
 
-Dockge manages Docker Compose stacks on the server. PostgreSQL stays on a private Docker network and is not published publicly. This is a logical topology, not a production deployment configuration.
+Dockge gestiona los stacks de Docker Compose en el servidor. PostgreSQL debe permanecer en una red Docker privada y no publicarse directamente en Internet. Esta es una topología lógica, no una configuración de producción lista para desplegar.
 
-## Application architecture
-- Frontend: React SPA built with Vite.
-- Backend: proposed Node.js API using Hono.
-- Persistence: proposed PostgreSQL with Drizzle ORM and Drizzle Kit.
-- Authentication: proposed Better Auth.
-- Shared boundary: Zod-based transport contracts in packages/contracts where justified.
-- Backend style: start as a modular monolith; extract services only when independent deployment is justified.
+## Arquitectura de aplicaciones
+- Frontend: SPA React compilada con Vite.
+- Backend: API Node.js propuesta con Hono.
+- Persistencia: PostgreSQL propuesto con Drizzle ORM y Drizzle Kit.
+- Autenticación: Better Auth propuesto.
+- Límite compartido: contratos de transporte Zod en packages/contracts cuando estén justificados.
+- Estilo del backend: empezar como monolito modular; extraer servicios únicamente cuando se justifique un despliegue independiente.
 
-## Dependency direction
-- Applications may depend on shared packages; shared packages never depend on applications.
-- Frontend never imports backend implementation, database schema or secrets.
-- Backend owns persistence and authentication implementation.
-- Shared contracts contain transport schemas and types, not database entities or business implementation.
-- Infrastructure must not leak into domain logic.
+## Dirección de dependencias
+- Las aplicaciones pueden depender de paquetes compartidos; los paquetes compartidos nunca dependen de aplicaciones.
+- El frontend nunca importa implementación del backend, esquema de base de datos ni secretos.
+- El backend es propietario de la persistencia y de la implementación de autenticación.
+- Los contratos compartidos contienen esquemas de transporte y tipos, no entidades de base de datos ni lógica de negocio.
+- La infraestructura no debe filtrarse a la lógica del dominio.
 
-## Architecture changes
-A change to an accepted boundary requires an ADR. A feature change within existing boundaries usually needs a requirement and implementation plan.
+## Cambios de arquitectura
+Un cambio en un límite arquitectónico aceptado requiere un ADR. Un cambio funcional dentro de los límites existentes suele necesitar un requisito y un plan de implementación.
