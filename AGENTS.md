@@ -3,6 +3,11 @@
 ## Identidad del proyecto
 Base de ingeniería reutilizable para aplicaciones web TypeScript organizadas en un monorepo pnpm. Este repositorio es la fuente de verdad de los requisitos, la arquitectura, las decisiones, los flujos de trabajo y los controles de calidad.
 
+## Herramientas agénticas admitidas
+Este repositorio está preparado para cuatro CLI nativos: Cursor Agent (`agent`), Google Antigravity (`agy`), OpenAI Codex (`codex`) y Anthropic Claude Code (`claude`). Utiliza únicamente los modelos propios del proveedor correspondiente: Composer, Gemini, GPT/Codex y Claude. La integración y puesta en marcha están documentadas en `docs/agents/README.md`.
+
+Las instrucciones de ingeniería compartidas viven aquí. No crees archivos de instrucciones duplicados ni contradigas este documento. Los adaptadores de proveedor solo deben cubrir diferencias de descubrimiento o capacidades específicas.
+
 ## Primeros pasos
 1. Lee este archivo.
 2. Empieza por `docs/README.md` y abre únicamente los documentos relevantes para la tarea.
