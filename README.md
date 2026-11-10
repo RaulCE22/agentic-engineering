@@ -2,6 +2,19 @@
 
 Base reutilizable para aplicaciones web desarrolladas mediante programación agéntica. **El modelo es intercambiable; el sistema de ingeniería pertenece al repositorio.**
 
+## Agentes CLI admitidos
+
+| Proveedor | CLI | Modelo propio |
+|---|---|---|
+| Cursor | `agent` | Composer |
+| Google | `agy` | Gemini |
+| OpenAI | `codex` | GPT/Codex |
+| Anthropic | `claude` | Claude |
+
+La fuente canónica de instrucciones es `AGENTS.md`. Los archivos `CLAUDE.md`, `GEMINI.md` y las reglas de Cursor son adaptadores mínimos. Las skills compartidas están en `.agents/skills/`.
+
+Consulta [la guía de agentes](docs/agents/README.md), la [matriz de compatibilidad](docs/agents/compatibilidad.md) y la [puesta en marcha de los CLI](docs/agents/puesta-en-marcha.md).
+
 ## Stack de referencia
 
 | Área | Tecnologías | Estado |
@@ -25,9 +38,9 @@ El backend sigue siendo una propuesta hasta cerrar las decisiones pendientes de 
 
 - `apps/`: aplicaciones desplegables (web y API inicialmente).
 - `packages/`: contratos y código realmente compartido.
-- `docs/`: producto, arquitectura, requisitos, ADR, calidad y plantillas.
+- `docs/`: producto, arquitectura, requisitos, ADR, calidad, agentes y plantillas.
 - `.agents/skills/`: procedimientos compartidos entre agentes.
-- `.claude/` y `.cursor/`: adaptadores para herramientas.
+- `.claude/` y `.cursor/`: adaptadores específicos de herramientas.
 - `infra/`: Docker, Hetzner, Dockge, Traefik y Cloudflare.
 - `scripts/engineering/`: validaciones y generadores deterministas.
 - `plans/`: planes y estado de los trabajos.
@@ -44,7 +57,7 @@ El backend sigue siendo una propuesta hasta cerrar las decisiones pendientes de 
 
 ## Primeros pasos
 
-Requisitos: Node.js 26 LTS y pnpm 12. Consulta [runtime.md](docs/architecture/runtime.md) para conocer los requisitos de plataforma.
+Requisitos: Node.js 26 LTS y pnpm 12. Consulta `docs/architecture/runtime.md` para conocer los requisitos de plataforma.
 
 ```bash
 npm install --global pnpm@12.18.0
