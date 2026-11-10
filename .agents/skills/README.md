@@ -11,4 +11,11 @@ Skills iniciales:
 - test-and-verify
 - code-review
 
-Fuente compartida: .agents/skills/. Claude Code accede al mismo directorio mediante .claude/skills.
+## Descubrimiento por CLI
+
+- Cursor Agent, Google Antigravity y OpenAI Codex utilizan `.agents/skills/` como ubicación compartida de skills compatibles.
+- Claude Code descubre las skills en `.claude/skills/`; en este repositorio esa ruta es un enlace simbólico a `.agents/skills/`.
+- No copies skills a carpetas específicas de cada proveedor. Añade adaptadores solo si una herramienta requiere metadatos o comportamiento adicional.
+- Revisa `docs/agents/compatibilidad.md` antes de modificar rutas o formatos.
+
+Fuente compartida: `.agents/skills/`.
