@@ -5,7 +5,9 @@ import process from "node:process";
 const root = process.cwd();
 const requiredFiles = [
   "README.md", "AGENTS.md", "CLAUDE.md", "GEMINI.md",
-  "docs/README.md", "docs/requirements/README.md",
+  "docs/README.md", "docs/agents/README.md",
+  "docs/agents/compatibilidad.md", "docs/agents/puesta-en-marcha.md",
+  "docs/requirements/README.md",
   "docs/architecture/overview.md", "docs/architecture/backend.md",
   "docs/architecture/frontend.md", "docs/architecture/pending-decisions.md",
   "docs/quality/quality-gates.md", "docs/quality/language-policy.md",
@@ -41,8 +43,8 @@ for (const file of requiredFiles) {
 const markdownFiles = await collectMarkdown(root);
 for (const filePath of markdownFiles) {
   const source = await readFile(filePath, "utf8");
-  const content = source.replace(/```[\s\S]*?```/g, "");
-  const pattern = /(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)/g;
+  const content = source.replace(/```[sS]*?```/g, "");
+  const pattern = /(?<!!)[[^]]*](([^)s]+)(?:s+[^)]*)?)/g;
   let match;
   while ((match = pattern.exec(content)) !== null) {
     const target = match[1].replace(/^<|>$/g, "");
