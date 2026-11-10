@@ -1,4 +1,4 @@
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readlink } from "node:fs/promises";
 import process from "node:process";
 
 const errors = [];
@@ -18,8 +18,12 @@ for (const directory of ["apps/web", "apps/api", "packages/contracts", "infra", 
   if (!await exists(directory)) errors.push(`Falta el directorio esperado: ${directory}`);
 }
 
-if (!await exists(".claude/skills")) {
-  console.warn("Aviso: falta el enlace .claude/skills; Claude Code podría no descubrir las skills compartidas.");
+try {
+  const target = await readlink(".claude/skills");
+  if (target !== "../.agents/skills") errors.push(`El enlace .claude/skills debe apuntar a ../.agents/skills, no a: ${target}`);
+  if (!await exists(".claude/skills")) errors.push("El enlace .claude/skills está roto.");
+} catch {
+  errors.push("Falta el enlace simbólico .claude/skills a ../.agents/skills.");
 }
 
 if (errors.length) {
