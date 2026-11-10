@@ -4,6 +4,9 @@ Empieza por este índice y abre únicamente los documentos necesarios para la ta
 
 | Área | Documento de entrada | Propósito |
 |---|---|---|
+| Agentes | agents/README.md | Herramientas CLI admitidas y organización compartida |
+| Compatibilidad CLI | agents/compatibilidad.md | Instrucciones, skills y adaptadores por proveedor |
+| Puesta en marcha | agents/puesta-en-marcha.md | Instalación, autenticación y uso de cuotas nativas |
 | Producto | product/vision.md | Visión del producto y principios de ingeniería |
 | Arquitectura | architecture/overview.md | Límites y mapa del sistema |
 | Entorno | architecture/runtime.md | Versiones de Node.js y compatibilidad |
@@ -21,7 +24,7 @@ Empieza por este índice y abre únicamente los documentos necesarios para la ta
 
 ## Jerarquía documental
 1. Los requisitos definen el comportamiento deseado del producto.
-2. Los ADR aceptados definen decisiones arquitectónicas duraderas.
+2. Los ADR aceptados definen decisiones arquitectónicas duraderas y sus consecuencias.
 3. Los documentos de arquitectura explican límites y convenciones estables.
 4. Los planes definen el alcance aprobado de un cambio concreto.
 5. Los registros de progreso reflejan lo que realmente ha ocurrido.
