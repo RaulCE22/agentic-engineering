@@ -4,3 +4,5 @@ alwaysApply: true
 ---
 
 Sigue el archivo raíz AGENTS.md como fuente canónica de las instrucciones del proyecto. Empieza por docs/README.md y consulta únicamente la documentación relevante para la tarea. Los procedimientos compartidos están en .agents/skills/. No dupliques ni contradigas las reglas canónicas en archivos específicos de Cursor.
+
+En Cursor CLI (agent), trabaja desde la raíz del repositorio para que se descubra AGENTS.md. Utiliza Composer y la autenticación nativa de Cursor; no configures proveedores externos ni claves API.
